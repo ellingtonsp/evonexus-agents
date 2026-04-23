@@ -4,3 +4,9 @@
 .DS_Store
 /tmp/
 node_modules/
+
+# Claude Code — commit skills/agents/settings.json, ignore personal state
+.claude/settings.local.json
+.claude/logs/
+.claude/cache/
+.claude/.*-sync.json
