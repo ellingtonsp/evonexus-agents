@@ -442,4 +442,4 @@ Write to `/tmp/<slug>_<role>_$(date +%Y-%m-%d).json`:
 After emitting the manifest, ask the user:
 > "Two questions before you go — (1) did the metaphor land, or should I tune the anthropomorphic layer? (2) did we collect everything, or did I miss a phase? I'll note it for the next time someone runs this."
 
-Log responses to `.claude/skills/orchestration-builder/meta-runs.jsonl` (create if missing). This skill evaluates itself with the same ritual it teaches.
+#### Log responses to `.claude/skills/orchestration-builder/meta-runs.jsonl` (create if missing). This skill evaluates itself with the same ritual it teaches.
