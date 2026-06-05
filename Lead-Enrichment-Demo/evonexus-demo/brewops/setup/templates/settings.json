@@ -1,0 +1,22 @@
+{
+  "_comment": "Claude Code project settings. Place at .claude/settings.json in your project. This allowlist pre-approves SAFE, mostly read-only tools so you aren't prompted constantly. Write actions (CRM creates) are intentionally NOT here, those stay your human gate.",
+
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Read",
+      "Grep",
+      "Glob",
+      "Bash(curl:*)",
+      "mcp__notion__*",
+      "mcp__tavily__*",
+      "mcp__filesystem__*"
+    ],
+    "ask": [
+      "Write",
+      "Edit",
+      "Bash"
+    ]
+  }
+}

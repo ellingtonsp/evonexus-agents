@@ -2,6 +2,7 @@
 .env.*
 !.env.example
 .DS_Store
+~$*
 /tmp/
 node_modules/
 

@@ -1,0 +1,29 @@
+{
+  "_comment": "Claude Code MCP config. Place at your project root as .mcp.json. Keys are read from your environment via ${VAR} (load your .env before launching: set -a; source .env; set +a). Remove any server you are not using.",
+
+  "mcpServers": {
+    "notion": {
+      "_comment": "Self-hosted Notion MCP. Prefer the hosted OAuth one? Delete this block and run: claude mcp add --transport http notion https://mcp.notion.com/mcp",
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "NOTION_TOKEN": "${NOTION_TOKEN}"
+      }
+    },
+
+    "filesystem": {
+      "_comment": "Lets the agent read your definitions/ files. Replace the path with your project's absolute path.",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/ABSOLUTE/PATH/TO/brewops-pipeline"]
+    },
+
+    "tavily": {
+      "_comment": "OPTIONAL dedicated web search. You can delete this and rely on Claude Code's built-in WebSearch tool instead.",
+      "command": "npx",
+      "args": ["-y", "tavily-mcp"],
+      "env": {
+        "TAVILY_API_KEY": "${TAVILY_API_KEY}"
+      }
+    }
+  }
+}

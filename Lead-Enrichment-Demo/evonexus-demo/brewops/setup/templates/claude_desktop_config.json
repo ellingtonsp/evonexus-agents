@@ -1,0 +1,18 @@
+{
+  "_comment": "Claude Desktop app MCP config. macOS path: ~/Library/Application Support/Claude/claude_desktop_config.json  (Windows: %APPDATA%\\Claude\\claude_desktop_config.json). NOTE: the Desktop app does NOT expand ${VAR} reliably, paste the ACTUAL token values here. This file lives in your app-support dir, not your repo, so it won't be committed, but still treat it as a secret. Restart Claude Desktop after editing.",
+
+  "mcpServers": {
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "NOTION_TOKEN": "PASTE_YOUR_REAL_NOTION_TOKEN_HERE"
+      }
+    },
+
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/ABSOLUTE/PATH/TO/brewops-pipeline"]
+    }
+  }
+}

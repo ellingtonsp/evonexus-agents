@@ -1,0 +1,19 @@
+{
+  "_stage": "Wave 1 output, raw discovery. This is ALL a discovery worker knew at first.",
+  "_note": "Sparse on purpose. A lead enters on name + city. Notice multiple workers found it, that's a positive multi-source signal.",
+  "shop_name": "Lighthouse Coffee Roasters",
+  "location": "Portland, OR",
+  "website": "https://lighthouseroasters.example",
+  "source": "Directory",
+  "signals": [
+    "Listed in Portland independent-cafe directory",
+    "Job board: 'Now hiring: Café Manager / Shift Lead' (Indeed, 4 days ago)",
+    "Instagram post: 'Our second location opens this fall in SE Portland!'"
+  ],
+  "found_by_workers": ["registry_worker", "signal_worker"],
+  "dedup_status": "new",
+  "transactions_per_day_est": null,
+  "locations_est": null,
+  "pos_system": null,
+  "contacts": []
+}

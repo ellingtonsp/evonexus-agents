@@ -11,6 +11,12 @@ Each department lives under `.claude/skills/<name>/` (the playbook) plus one or 
 | `orchestration-builder` | Meta-skill — interviews you and scaffolds a new department. |
 | `program-manager` | Weekly ROI-only portfolio review. Emits a one-page memo with Continue/Pause/Kill calls gated on founder approval. |
 
+Plus a worked example you can present or hand out:
+
+| Folder | What it is |
+|---|---|
+| `Lead-Enrichment-Demo/` | A build-along talk + slide deck (and supporting demo materials) that walks an audience through a lead-enrichment pipeline using the same wave pattern these departments follow. See below. |
+
 ## Using the orchestration builder
 
 The orchestration-builder is the "hiring manager" for new departments. You describe a workflow in plain English; it interviews you across six phases (charter → org chart → subscriptions → memory/state → performance review → deliverables) and writes the skill, subagents, eval rubric, and README to disk.
@@ -76,6 +82,31 @@ Every department built with this framework follows the **Novara wave pattern**:
 - **Wave 4** — commit deliverables + two-phase JSONL run log (phase 1 at write, phase 2 after feedback).
 
 This keeps costs low on legwork, puts the reasoning budget where it matters, and makes every run self-auditing.
+
+## Lead-Enrichment-Demo
+
+A self-contained teaching artifact: a build-along talk that frames an SDR's job as a state machine an LLM agent is *allowed to operate* inside guardrails, with a human holding the pen at the one irreversible step. It maps every technical choice (state machine, enrichment, tools, gates, human-in-the-loop, eval loop) to a documented LLM best practice — the same Novara wave pattern the departments here use.
+
+```
+Lead-Enrichment-Demo/
+  evonexus-lead-enrichment-talk.md   # the full ~45-min build-along script
+  evonexus-lead-enrichment.pptx      # generated slide deck
+  evonexus-lead-enrichment.pdf       # PDF export of the deck
+  build-deck.js                      # regenerates the deck from the talk (pptxgenjs)
+  evonexus-demo/brewops/             # demo dataset + definitions + setup paths
+    definitions/                     # lead, prospect, ICP, state machine, buyer roles, glossary
+    data/                            # raw discovery → enriched → human gate → CRM record
+    setup/                           # Copilot / Claude Code / cloud-agent setup paths + templates
+  package.json                       # pptxgenjs dependency for build-deck.js
+```
+
+Regenerate the deck:
+
+```
+cd Lead-Enrichment-Demo
+npm install
+node build-deck.js
+```
 
 ## Repository layout
 

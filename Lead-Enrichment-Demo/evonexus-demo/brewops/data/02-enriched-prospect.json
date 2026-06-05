@@ -1,0 +1,65 @@
+{
+  "_stage": "Wave 2 output, after enrichment workers + scoring. Same lead, now rich.",
+  "_note": "Clinic-data worker filled the shop facts; contact worker found the humans + emails (with confidence). Score recomputed from real facts.",
+  "shop_name": "Lighthouse Coffee Roasters",
+  "location": "Portland, OR",
+  "website": "https://lighthouseroasters.example",
+  "source": "Directory + Indeed signal",
+  "dedup_status": "new",
+
+  "enriched_shop_facts": {
+    "transactions_per_day_est": 540,
+    "locations_current": 1,
+    "locations_planned": 2,
+    "pos_system": "Square (basic plan, no ops/scheduling add-on)",
+    "ops_tooling": "None detected, scheduling appears to be a shared spreadsheet (mentioned in a Glassdoor review)",
+    "independence": "Independent, single owner",
+    "phone": "(503) 555-0142"
+  },
+
+  "inbound_signal_check": {
+    "visited_brewops_site": false,
+    "submitted_demo_form": false,
+    "score_adjustment": 0
+  },
+
+  "contacts": [
+    {
+      "name": "Dana Whitfield",
+      "title": "Café Manager",
+      "role": "Champion",
+      "email": "dana@lighthouseroasters.example",
+      "email_confidence": "Verified",
+      "linkedin": "https://linkedin.com/in/dana-whitfield-example",
+      "source": "Hunter.io domain search",
+      "notes": "Owns daily ops. The job post she's hiring for IS the capacity pain. Primary entry point."
+    },
+    {
+      "name": "Marcus Reed",
+      "title": "Owner / Founder",
+      "role": "Decision-maker",
+      "email": null,
+      "email_confidence": "Not Found",
+      "linkedin": "https://linkedin.com/in/marcus-reed-example",
+      "source": "Website About page + LinkedIn",
+      "notes": "Escalation contact, not the entry point. Reach through Dana."
+    }
+  ],
+
+  "lead_score": {
+    "volume_fit": 25,
+    "size_fit": 15,
+    "independence": 15,
+    "growth_capacity_signal": 20,
+    "geographic_priority": 6,
+    "tech_landscape": 15,
+    "total": 96,
+    "priority": "High",
+    "_math_note": "540 tx/day -> full volume marks. Hiring a manager AND opening a 2nd location -> max signal. Square-only, no ops tool -> open field. Computed by code, not the model."
+  },
+
+  "brewops_angle": "Single-location independent doing ~540 transactions/day and actively hiring a manager while opening a second store this fall, the classic moment scheduling-by-spreadsheet breaks. Dana (the manager she's trying to hire for) is the pain owner. BrewOps replaces the spreadsheet and gives her one schedule + inventory view across both locations before the second store compounds the chaos.",
+
+  "next_step": "Connect with Dana Whitfield on LinkedIn re: managing scheduling across two locations.",
+  "validation_passed": true
+}
